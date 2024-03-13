@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB 11 PROGRAM</title>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCntrl", function($scope){
+            $scope.stud = ['thanuja', 'chandu', 'mohana', 'arun', 'shiva']
+        });
+    </script>
+</head>
+<body ng-app = "myApp">
+    <h1>STUDENT DETAILS IN UPPERCASE</h1>
+    <div ng-controller = "myCntrl">
+        <table border="5">
+            <tr>
+                <th>SL.NO</th>
+                <th>NAME</th>
+            </tr>
+            <tr ng-repeat = "std in stud">
+                <td>{{$index+1}}</td>
+                <td>{{std|uppercase}}</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
